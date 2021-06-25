@@ -1,33 +1,48 @@
 import Resort from './Resort'
 
-const Resorts = ({ resorts, handleChange, filteredResorts, openSearch, setOpenSearch }) => {
+const Resorts = ({ resorts, addResort, handleChange, filteredResorts, openSearch, setOpenSearch, setSearchInput, searchInput, showResort }) => {
   return (
+
     <section className="main resorts">
-      <div className="resortList">
-          {resorts ? resorts.map((resort) => (
-            <Resort key={resort.id} resort={resort}/>
+
+      <div className={openSearch ? "hidden resortList" : "resortList"}>
+          {resorts.length > 0 ? resorts.map((resort) => (
+            <Resort key={resort.id} 
+                    resort={resort}
+                    showResort={showResort}
+                    />
             )) : 'Add a resort using the + icon below'}
       </div>
       
-      <div className="add"
-           onClick={() => openSearch ? setOpenSearch(false) : setOpenSearch(true)}>
-        <span>
-          {openSearch ? 'x': '+'}
-        </span>
-      </div>
+      <i className={openSearch ? 'remove add fas fa-plus' : 'add fas fa-plus'}
+           onClick={() => {
+             if (openSearch) {
+              setOpenSearch(false)
+              setSearchInput("")
+            } else {
+              setOpenSearch(true)
+            }}}
+            title='Add resort(s)'>
+      </i>
       
       {openSearch ? 
         <div className="addResort">
-          <input type="text" 
-                className='resortSearch'
+          <div className="inputWrapper">
+            <input type="text" 
+                className='resortSearchBox'
                 placeholder='Enter a resort'
                 onChange={handleChange}
           />
+          </div>
+          
 
           <div className="searchResults">
-            {filteredResorts.map((resort) => (
-              <p key={resort.id}>{resort.name}</p>
-            ))}
+            {searchInput.length > 0 ? 
+              filteredResorts.map((resort) => (
+                <p key={resort.id}
+                   onClick={() => addResort(resort)}>{resort.name}</p>))
+              : ''
+            }
           </div>
         </div>
         : '' 

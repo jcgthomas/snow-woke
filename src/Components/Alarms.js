@@ -1,12 +1,12 @@
-const Alarms = () => {
+const Alarms = ({ openAlarm }) => {
   return (
     <section className="main alarms">
       <h1>My Alarms</h1>
 
       
-      <div className="add">
-        <span>+</span>
-      </div>
+      <i className={openAlarm ? 'remove add fas fa-plus' : 'add fas fa-plus'}
+           onClick={() => ''}>
+      </i>
 
     </section>
   )

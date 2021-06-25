@@ -39,14 +39,19 @@ h1 {
   justify-content: space-between;
   align-items: center;
   top: 0;
-  z-index: 2;
+}
+
+.headerTitle {
+  font-weight: 400;
+  font-size: 1.1rem;
 }
 
 .main {
   position: relative;
-  overflow: scroll;
-  height: 100vh;
+  overflow: hidden;
+  height: calc(100vh - 120px);
   margin: 0 0 160px 0;
+
 }
 
 .footer {
@@ -65,12 +70,10 @@ h1 {
 .fas {
   font-size: 1.5rem;
   line-height: 60px;
-  width: 100%;
-  height: 100%;
   text-align: center;
   color: #44799c;
-  
-  bottom: 0;
+  width: 100%;
+  cursor: pointer;
 }
 
 .searchButton {
@@ -90,62 +93,194 @@ RESORTS SECTION
 
 ////////////////////////////////////////////////// */
 
-.resorts::after {
-  content: '';
-  display: block;
-  height: 190px;
-  width: 100%;
+.resortList {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.hidden {
+  display: none;
 }
 
 .resort {
   word-wrap: break-word;
-  margin: 30px 0;
-  padding: 10px;
+  margin: 30px 10px;
+  padding: 20px 10px;
   background: #dcecfa;
   box-shadow: 0px 3px 10px #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms;
 
   position: relative;
+
+  &:hover {
+    background-color: #e7ecef;
+  }
 }
 
 .add {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  font-size: 3rem;
+  font-size: 2rem;
   background-color: #44799c;
   color: white;
   cursor: pointer;
   z-index: 2;
+  transition: 150ms;
 
   position: fixed;
   bottom: 80px;
   right: 20px;
 
-  & span {
-    top: -4px;
-    left: 14px;
-    position: absolute;
+  &:hover {
+    background-color: #1e3a5c;
   }
+}
+
+.remove {
+  transform: rotate(135deg);
 }
 
 .addResort {
-  position: fixed;
-  top: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  background-color: #e7ecef;
+  font-size: 1.3rem;
   height: 100%;
+  overflow-y: scroll;
+}
 
-  background: white;
-  padding: 20px;
-  font-size: 1.4rem;
+.resortSearchBox {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #1E3A5C;
+  border-radius: 5px;
+  position: fixed;
+}
+
+.searchResults {
+  margin: 70px auto;
+  width: calc(100% - 20px);
 
   & p {
     margin-bottom: 5px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 500ms;
+
+    &:hover {
+      background: #dcecfa;
+      transition: 200ms;
+    }
+
+    &:active {
+      background: lightgreen;
+      transition: 0ms;
+    }
   }
 }
 
-.resortSearch {
+.resortInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  cursor: default;
+}
+
+h2 {
+  font-weight: 200;
+  background: #ccc;
+  width: 100vw;
+  text-align: center;
+}
+
+.viewMap {
+  cursor: pointer;
+}
+
+
+
+/* //////////////////////////////////////////////////
+
+MAP SECTION
+
+////////////////////////////////////////////////// */
+
+.map {
+  & h1 {
+    margin-top: 60px;
+  }
+}
+
+.mapImage {
+  height: calc( 100% - 60px );
+
+  & img {
+    margin-top: 60px;
+    width: 100vw;
+    box-shadow: 0px 0px 20px #999;
+  }
+}
+
+.changeMap {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 2rem;
+  background-color: #44799c;
+  color: white;
+  cursor: pointer;
+  z-index: 2;
+  transition: 150ms;
+
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+
+  &:hover {
+    background-color: #1e3a5c;
+  }
+}
+
+.mapList {
   width: 100%;
-  padding: 5px;
-  margin-bottom: 20px;
+  background: #e7ecef;
+  padding: 10px 10px 80px 10px;
+  position: absolute;
+  bottom: 0;
   font-size: 1.2rem;
+  max-height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: 0px 8px 20px #444;
+  
+  overflow-y: scroll;
+
+  & p {
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 500ms;
+    
+    &:hover {
+      background: #dcecfa;
+      transition: 200ms;
+    }
+
+    &:active {
+      background: lightgreen;
+      transition: 0ms;
+    }
+  }
 }
