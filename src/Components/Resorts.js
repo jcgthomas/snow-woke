@@ -1,55 +1,72 @@
-import Resort from './Resort'
+import Resort from "./Resort";
 
-const Resorts = ({ resorts, addResort, handleChange, filteredResorts, openSearch, setOpenSearch, setSearchInput, searchInput, showResort }) => {
-  return (
+const Resorts = ({
+	resorts,
+	addResort,
+	handleChange,
+	filteredResorts,
+	openSearch,
+	setOpenSearch,
+	setSearchInput,
+	searchInput,
+	showResort,
+	removeResort,
+}) => {
+	return (
+		<section className="main resorts">
+			<div className='resortList'>
+				{resorts.length > 0
+					? resorts.map((resort) => (
+							<Resort
+								key={resort.id}
+								resort={resort}
+								showResort={showResort}
+								removeResort={removeResort}
+							/>
+					  ))
+					: <p className='noResortsAdded'>Add a resort using the + icon below</p>}
+			</div>
 
-    <section className="main resorts">
+			<i
+				className={
+					openSearch
+						? "circleMenuButton remove fas fa-plus"
+						: "circleMenuButton fas fa-plus"
+				}
+				onClick={() => {
+					if (openSearch) {
+						setOpenSearch(false);
+						setSearchInput("");
+					} else {
+						setOpenSearch(true);
+					}
+				}}
+				title="Add resort(s)"
+			></i>
 
-      <div className={openSearch ? "hidden resortList" : "resortList"}>
-          {resorts.length > 0 ? resorts.map((resort) => (
-            <Resort key={resort.id} 
-                    resort={resort}
-                    showResort={showResort}
-                    />
-            )) : 'Add a resort using the + icon below'}
-      </div>
-      
-      <i className={openSearch ? 'remove add fas fa-plus' : 'add fas fa-plus'}
-           onClick={() => {
-             if (openSearch) {
-              setOpenSearch(false)
-              setSearchInput("")
-            } else {
-              setOpenSearch(true)
-            }}}
-            title='Add resort(s)'>
-      </i>
-      
-      {openSearch ? 
-        <div className="addResort">
-          <div className="inputWrapper">
-            <input type="text" 
-                className='resortSearchBox'
-                placeholder='Enter a resort'
-                onChange={handleChange}
-          />
-          </div>
-          
+			<div className={openSearch ? 'slideUp addResort' : 'addResort'}>
+					<input
+						type="text"
+						className="resortSearchBox"
+						placeholder="Enter a resort"
+						onChange={handleChange}
+					/>
 
-          <div className="searchResults">
-            {searchInput.length > 0 ? 
-              filteredResorts.map((resort) => (
-                <p key={resort.id}
-                   onClick={() => addResort(resort)}>{resort.name}</p>))
-              : ''
-            }
-          </div>
-        </div>
-        : '' 
-      }
-      
-    </section>
-  )
-}
+				<div className="searchResults">
+					{searchInput.length > 0
+						? filteredResorts.map((resort) => (
+								<p
+									key={resort.id}
+									onClick={() => addResort(resort)}
+								>
+									{resort.name}
+								</p>
+						  ))
+						: ""}
+				</div>
+			</div>
+		</section>
+	);
+};
 
-export default Resorts
+export default Resorts;

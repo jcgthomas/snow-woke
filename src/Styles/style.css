@@ -13,7 +13,7 @@ HEADER & FOOTER
 }
 
 .snowWoke {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: #1e3a5c;
   background: #f8f8f8;
   height: 100vh;
@@ -54,7 +54,6 @@ h1 {
   position: relative;
   overflow: hidden;
   height: calc(100vh - 120px);
-  margin: 0 0 160px 0;
 }
 
 .footer {
@@ -75,7 +74,7 @@ h1 {
   position: fixed;
 }
 
-.fas {
+.menuIcon {
   font-size: 1.5rem;
   line-height: 60px;
   text-align: center;
@@ -101,51 +100,83 @@ h1 {
 RESORTS SECTION
 
 ////////////////////////////////////////////////// */
+.noResortsAdded {
+  text-align: center;
+  -webkit-transform: translateY(35vh);
+          transform: translateY(35vh);
+}
+
 .resortList {
   height: 100%;
   overflow-y: scroll;
-}
-
-.hidden {
-  display: none;
+  padding-bottom: 70px;
 }
 
 .resort {
   word-wrap: break-word;
   margin: 30px 10px;
-  padding: 20px 10px;
-  background: #dcecfa;
+  padding: 5px;
+  background: linear-gradient(150deg, #c9def0, #e7ecef, #e7ecef);
   -webkit-box-shadow: 0px 3px 10px #ddd;
           box-shadow: 0px 3px 10px #ddd;
   border-radius: 10px;
-  cursor: pointer;
   -webkit-transition: 200ms;
   transition: 200ms;
-  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.resort:hover {
-  background-color: #e7ecef;
-}
-
-.add {
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 2rem;
-  background-color: #44799c;
-  color: white;
+.resortTitle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   cursor: pointer;
-  z-index: 2;
-  -webkit-transition: 150ms;
-  transition: 150ms;
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
+  width: 100%;
 }
 
-.add:hover {
-  background-color: #1e3a5c;
+.resortIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.resortIcons i {
+  padding: 7px;
+  opacity: 70%;
+}
+
+.resortIcons i:hover {
+  opacity: 100%;
+}
+
+.deleteIcon {
+  color: #f20d0d;
+}
+
+.alarmOn {
+  color: green;
 }
 
 .remove {
@@ -158,10 +189,16 @@ RESORTS SECTION
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #e7ecef;
+  background: linear-gradient(150deg, #c9def0, #e7ecef, #e7ecef);
   font-size: 1.3rem;
   height: 100%;
   overflow-y: scroll;
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
 }
 
 .resortSearchBox {
@@ -169,9 +206,12 @@ RESORTS SECTION
   padding: 10px;
   margin: 10px;
   font-size: 1.2rem;
-  border: 2px solid #1E3A5C;
   border-radius: 5px;
   position: fixed;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
 }
 
 .searchResults {
@@ -196,9 +236,9 @@ RESORTS SECTION
 }
 
 .searchResults p:active {
-  background: lightgreen;
-  -webkit-transition: 0ms;
-  transition: 0ms;
+  background: linear-gradient(160deg, #87eb87, #cafdca);
+  -webkit-transition: 100ms;
+  transition: 100ms;
 }
 
 .resortInfo {
@@ -232,22 +272,44 @@ h2 {
 MAP SECTION
 
 ////////////////////////////////////////////////// */
-.map h1 {
-  margin-top: 60px;
+.map {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .mapImage {
-  height: calc( 100% - 60px);
+  height: calc(100% - 60px);
 }
 
 .mapImage img {
-  margin-top: 60px;
+  margin-top: 20px;
   width: 100vw;
   -webkit-box-shadow: 0px 0px 20px #999;
           box-shadow: 0px 0px 20px #999;
 }
 
-.changeMap {
+.mapFooter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #44799c;
+  font-style: italic;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.circleMenuButton {
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -258,18 +320,20 @@ MAP SECTION
   z-index: 2;
   -webkit-transition: 150ms;
   transition: 150ms;
+  line-height: 60px;
+  text-align: center;
   position: fixed;
   bottom: 80px;
   right: 20px;
 }
 
-.changeMap:hover {
+.circleMenuButton:hover {
   background-color: #1e3a5c;
 }
 
 .mapList {
   width: 100%;
-  background: #e7ecef;
+  background: linear-gradient(150deg, #c9def0, #e7ecef, #e7ecef);
   padding: 10px 10px 80px 10px;
   position: absolute;
   bottom: 0;
@@ -277,8 +341,14 @@ MAP SECTION
   max-height: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  -webkit-box-shadow: 0px 8px 20px #444;
-          box-shadow: 0px 8px 20px #444;
+  -webkit-box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+  -webkit-transition: -webkit-transform 500ms;
+  transition: -webkit-transform 500ms;
+  transition: transform 500ms;
+  transition: transform 500ms, -webkit-transform 500ms;
+  -webkit-transform: translateY(100vh);
+          transform: translateY(100vh);
   overflow-y: scroll;
 }
 
@@ -299,8 +369,13 @@ MAP SECTION
 }
 
 .mapList p:active {
-  background: lightgreen;
-  -webkit-transition: 0ms;
-  transition: 0ms;
+  background: linear-gradient(160deg, #87eb87, #cafdca);
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.slideUp {
+  -webkit-transform: none;
+          transform: none;
 }
 /*# sourceMappingURL=style.css.map */
