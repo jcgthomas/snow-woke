@@ -3,8 +3,8 @@ const Map = ({
 	resortMap,
 	resorts,
 	setMap,
-	showMapList,
-	setShowMapList,
+	showList,
+	setShowList,
 }) => {
 	const returnMap = (link) => {
 		if (link.image.url == null) {
@@ -12,10 +12,6 @@ const Map = ({
 		} else {
 			return link.image.url;
 		}
-	};
-
-	const openMapList = () => {
-		setShowMapList(true);
 	};
 
 	return (
@@ -26,7 +22,7 @@ const Map = ({
 				className="circleMenuButton fas fa-images"
 				title="Change Map"
 				onClick={() => {
-					showMapList ? setShowMapList(false) : setShowMapList(true);
+					showList ? setShowList(false) : setShowList(true);
 				}}
 			></i>
 
@@ -35,6 +31,7 @@ const Map = ({
 					href={resortMap.original.url}
 					target="_blank"
 					title="Click to see large version"
+          rel='noreferrer'
 				>
 					<img
 						src={returnMap(resortMap)}
@@ -46,7 +43,7 @@ const Map = ({
 				</a>
 			</div>
 
-			<div className={showMapList ? "slideUp mapList" : "mapList"}>
+			<div className={showList ? "slideUp list" : "list"}>
 				{resorts.map((resort) => (
 					<p
 						key={resort.id}

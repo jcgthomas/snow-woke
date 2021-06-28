@@ -21,7 +21,7 @@ const Resort = ({ resort, showResort, removeResort }) => {
 				></i>
 				<i
 					className={
-						resort.alarm
+						Object.keys(resort.alarms).length > 0
 							? "alarmIcon alarmOn fas fa-bell"
 							: "alarmIcon fas fa-bell"
 					}

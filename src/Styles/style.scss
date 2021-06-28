@@ -25,8 +25,21 @@ HEADER & FOOTER
 
 h1 {
 	text-align: center;
-	font-size: 1.3rem;
+	font-size: 1.2rem;
 	font-weight: 400;
+  margin: 20px 0 0 0;
+}
+
+h2 {
+	font-weight: 200;
+	background: #ccc;
+	width: 100vw;
+	text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 400;
 }
 
 .header {
@@ -101,7 +114,8 @@ RESORTS SECTION
 	padding-bottom: 70px;
 }
 
-.resort {
+.resort,
+.alarm {
 	word-wrap: break-word;
 	margin: 30px 10px;
 	padding: 5px;
@@ -114,7 +128,8 @@ RESORTS SECTION
 	justify-content: space-between;
 }
 
-.resortTitle {
+.resortTitle,
+.alarmTitle {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -122,12 +137,15 @@ RESORTS SECTION
 	width: 100%;
 }
 
-.resortIcons {
+.resortIcons,
+.alarmIcons {
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
 	font-size: 1.2rem;
 	margin-left: 10px;
+	align-items: flex-end;
+	min-height: 100%;
 
 	& i {
 		padding: 7px;
@@ -143,10 +161,6 @@ RESORTS SECTION
 	color: hsla(0, 90, 50, 1);
 }
 
-.alarmOn {
-	color: green;
-}
-
 .remove {
 	transform: rotate(135deg);
 }
@@ -156,7 +170,12 @@ RESORTS SECTION
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: linear-gradient(150deg, #c9def0, #e7ecef, #e7ecef);
+	background: linear-gradient(
+		150deg,
+		rgba(#c9def0, 0.8),
+		rgba(#e7ecef, 0.8),
+		rgba(#e7ecef, 0.8)
+	);
 	font-size: 1.3rem;
 	height: 100%;
 	overflow-y: scroll;
@@ -246,12 +265,12 @@ MAP SECTION
 }
 
 .mapFooter {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 	color: #44799c;
 	font-style: italic;
 	font-size: 0.8rem;
-  text-decoration: none;
+	text-decoration: none;
 }
 
 .circleMenuButton {
@@ -276,9 +295,14 @@ MAP SECTION
 	}
 }
 
-.mapList {
+.list {
 	width: 100%;
-	background: linear-gradient(150deg, #c9def0, #e7ecef, #e7ecef);
+	background: linear-gradient(
+		150deg,
+		rgba(#c9def0, 0.6),
+		rgba(#e7ecef, 0.6),
+		rgba(#e7ecef, 0.6)
+	);
 	padding: 10px 10px 80px 10px;
 	position: absolute;
 	bottom: 0;
@@ -288,7 +312,7 @@ MAP SECTION
 	border-top-right-radius: 10px;
 	box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
 	transition: transform 500ms;
-	transform: translateY(100vh);
+	transform: translateY(120%);
 
 	overflow-y: scroll;
 
@@ -316,6 +340,184 @@ MAP SECTION
 	}
 }
 
+/* //////////////////////////////////////////////////
+
+ALARM SECTION
+
+////////////////////////////////////////////////// */
+
+.alarms {
+	position: relative;
+}
+
+.alarmsList {
+	height: 100%;
+	overflow-y: scroll;
+	padding-bottom: 70px;
+}
+
+.newAlarm {
+	background: linear-gradient(
+		150deg,
+		rgba(#c9def0, 0.8),
+		rgba(#e7ecef, 0.8),
+		rgba(#e7ecef, 0.8)
+	);
+
+	position: fixed;
+	bottom: 160px;
+	left: 10px;
+	width: calc(100vw - 20px);
+	border-radius: 15px;
+	padding: 10px;
+	transform: translateY(180%);
+	transition: transform 500ms;
+
+	& * {
+		padding: 2px 5px 0px 5px;
+		background-color: white;
+		border-radius: 8px;
+		margin-bottom: 5px;
+	}
+}
+
+.alarmDetails {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: flex-end;
+
+	& * {
+		margin-left: 5px;
+	}
+}
+
+.alarmTitle {
+	cursor: default;
+}
+
+.alarmIcons {
+	justify-content: space-between;
+}
+
+.alarmToggle {
+	font-size: 1.8rem;
+	transform: rotate(180deg) translateY(-10px);
+}
+
+.alarmOn {
+	color: green;
+	transform: translateY(10px);
+}
+
+.alarmOff {
+	opacity: 70%;
+}
+
 .slideUp {
 	transform: none;
+}
+
+.newAlarmHeader {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.6rem;
+
+	& .fas {
+		color: hsla(0, 90, 50, 1);
+		cursor: pointer;
+	}
+}
+
+.newAlarmDetails {
+	position: relative;
+  padding-top: 5px;
+
+	& form {
+		display: flex;
+		flex-direction: column;
+	}
+
+	& .fas {
+		color: green;
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		font-size: 1.6rem;
+	}
+}
+
+/* //////////////////////////////////////////////////
+
+WEATHER SECTION
+
+////////////////////////////////////////////////// */
+
+.forecast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  height: calc(100vh - 120px);
+  overflow-y:scroll;
+  padding-bottom: 60px;
+}
+
+.updated {
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.hourlyDiv {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px 0;
+  min-height: 155px;
+  background: linear-gradient(
+		150deg,
+		rgba(#c9def0, 0.8),
+		rgba(#e7ecef, 0.8),
+		rgba(#e7ecef, 0.8)
+	);
+  border-radius: 10px;
+  padding: 2px 6px 6px 6px;
+}
+
+.hourly {
+  display: grid;
+  grid-template-columns: 40px repeat(8, 1fr);
+  grid-template-rows: 1fr;
+  font-size: 1.2rem;
+
+  & p {
+    text-align: right;
+    margin-right: 2px;
+  font-size: 1rem;
+    line-height: 2rem;
+  }
+}
+
+.hour {
+  margin: 2px;
+  border-radius: 4px;
+  text-align: center;
+  background: #fff;
+  min-width: 30px;
+}
+
+.hours {
+  font-size: 0.7rem;
+  background: rgba(white, 0.6);
+  border-radius: 5px;
+
+  & p {
+    line-height: 1.3rem;
+  font-size: 0.7rem;
+  }
 }
