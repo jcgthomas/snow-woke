@@ -1,5 +1,13 @@
 const Hour = ({ unit }) => {
-  return <div className="hour">{unit == 0 ? '0' : unit}</div>;
+
+  const checkUnit = () => {
+    if (unit == 0) {
+      unit = "0"
+    }
+    return unit
+  }
+
+  return <div className="hour">{checkUnit()}</div>;
 }
 
 export default Hour

@@ -13,86 +13,404 @@ import Map from "./Components/Map";
 import ResortInfo from "./Components/ResortInfo";
 
 function App() {
-	// Most state in this app is required to be global as different pages need to interact with each other
-
 	// Temporary template weather object
 
 	const tempWeather = {
 		data: {
-			request: [{ query: "", type: "LatLon" }],
+			request: [{ query: "", type: "" }],
 			weather: [
 				{
 					astronomy: [null],
 					bottom: [
 						{
-							maxtempC: "23",
-							maxtempF: "73",
-							mintempC: "10",
-							mintempF: "50",
+							maxtempC: "",
+							maxtempF: "",
+							mintempC: "",
+							mintempF: "",
 						},
 					],
-					chanceofsnow: "0",
+					chanceofsnow: "",
 					date: "NOT CHECKED",
 					hourly: [
 						{
 							bottom: [
 								{
-									tempC: "9",
-									tempF: "48",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Clear" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSE",
-									winddirDegree: "164",
-									windspeedKmph: "8",
-									windspeedMiles: "5",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							cloudcover: "23",
-							freezeLevel: "3858",
-							humidity: "78",
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
 							mid: [
 								{
-									tempC: "14",
-									tempF: "56",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Clear" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSW",
-									winddirDegree: "194",
-									windspeedKmph: "5",
-									windspeedMiles: "3",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							precipInches: "0.0",
-							precipMM: "0.0",
-							pressure: "1019",
-							pressureInches: "31",
-							snowfall_cm: "0.0",
-							time: "0",
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
 							top: [
 								{
-									tempC: "10",
-									tempF: "51",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Clear" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSW",
-									winddirDegree: "195",
-									windspeedKmph: "5",
-									windspeedMiles: "3",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "Suny" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
 							visibility: "10",
@@ -101,469 +419,149 @@ function App() {
 						{
 							bottom: [
 								{
-									tempC: "8",
-									tempF: "47",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Clear" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSE",
-									winddirDegree: "156",
-									windspeedKmph: "9",
-									windspeedMiles: "6",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							cloudcover: "11",
-							freezeLevel: "3991",
-							humidity: "79",
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
 							mid: [
 								{
-									tempC: "13",
-									tempF: "55",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Clear" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSE",
-									winddirDegree: "165",
-									windspeedKmph: "7",
-									windspeedMiles: "4",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							precipInches: "0.0",
-							precipMM: "0.0",
-							pressure: "1018",
-							pressureInches: "31",
-							snowfall_cm: "0.0",
-							time: "300",
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
 							top: [
 								{
-									tempC: "10",
-									tempF: "50",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Clear" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0008_clear_sky_night.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSE",
-									winddirDegree: "165",
-									windspeedKmph: "7",
-									windspeedMiles: "4",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							visibility: "10",
-							visibilityMiles: "6",
+							visibility: "",
+							visibilityMiles: "",
 						},
 						{
 							bottom: [
 								{
-									tempC: "16",
-									tempF: "61",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSE",
-									winddirDegree: "162",
-									windspeedKmph: "8",
-									windspeedMiles: "5",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							cloudcover: "5",
-							freezeLevel: "3975",
-							humidity: "66",
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
 							mid: [
 								{
-									tempC: "14",
-									tempF: "56",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
+											value: "",
 										},
 									],
-									winddir16Point: "SSE",
-									winddirDegree: "169",
-									windspeedKmph: "7",
-									windspeedMiles: "4",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							precipInches: "0.0",
-							precipMM: "0.0",
-							pressure: "1017",
-							pressureInches: "31",
-							snowfall_cm: "0.0",
-							time: "600",
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
 							top: [
 								{
-									tempC: "10",
-									tempF: "51",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
 									weatherIconUrl: [
 										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
+											value: "",
 										},
 									],
-									winddir16Point: "S",
-									winddirDegree: "173",
-									windspeedKmph: "6",
-									windspeedMiles: "4",
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
 								},
 							],
-							visibility: "10",
-							visibilityMiles: "6",
-						},
-						{
-							bottom: [
-								{
-									tempC: "21",
-									tempF: "69",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "S",
-									winddirDegree: "186",
-									windspeedKmph: "2",
-									windspeedMiles: "1",
-								},
-							],
-							cloudcover: "13",
-							freezeLevel: "4057",
-							humidity: "44",
-							mid: [
-								{
-									tempC: "16",
-									tempF: "61",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "S",
-									winddirDegree: "169",
-									windspeedKmph: "3",
-									windspeedMiles: "2",
-								},
-							],
-							precipInches: "0.0",
-							precipMM: "0.0",
-							pressure: "1017",
-							pressureInches: "30",
-							snowfall_cm: "0.0",
-							time: "900",
-							top: [
-								{
-									tempC: "12",
-									tempF: "53",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "SSE",
-									winddirDegree: "165",
-									windspeedKmph: "5",
-									windspeedMiles: "3",
-								},
-							],
-							visibility: "10",
-							visibilityMiles: "6",
-						},
-						{
-							bottom: [
-								{
-									tempC: "23",
-									tempF: "73",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "NNW",
-									winddirDegree: "341",
-									windspeedKmph: "5",
-									windspeedMiles: "3",
-								},
-							],
-							cloudcover: "10",
-							freezeLevel: "3956",
-							humidity: "38",
-							mid: [
-								{
-									tempC: "19",
-									tempF: "66",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "NNW",
-									winddirDegree: "341",
-									windspeedKmph: "3",
-									windspeedMiles: "2",
-								},
-							],
-							precipInches: "0.0",
-							precipMM: "0.0",
-							pressure: "1015",
-							pressureInches: "30",
-							snowfall_cm: "0.0",
-							time: "1200",
-							top: [
-								{
-									tempC: "14",
-									tempF: "57",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "S",
-									winddirDegree: "184",
-									windspeedKmph: "1",
-									windspeedMiles: "1",
-								},
-							],
-							visibility: "10",
-							visibilityMiles: "6",
-						},
-						{
-							bottom: [
-								{
-									tempC: "21",
-									tempF: "69",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "N",
-									winddirDegree: "358",
-									windspeedKmph: "5",
-									windspeedMiles: "3",
-								},
-							],
-							cloudcover: "12",
-							freezeLevel: "4067",
-							humidity: "56",
-							mid: [
-								{
-									tempC: "17",
-									tempF: "63",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "N",
-									winddirDegree: "360",
-									windspeedKmph: "6",
-									windspeedMiles: "4",
-								},
-							],
-							precipInches: "0.0",
-							precipMM: "0.1",
-							pressure: "1015",
-							pressureInches: "30",
-							snowfall_cm: "0.0",
-							time: "1500",
-							top: [
-								{
-									tempC: "13",
-									tempF: "56",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "NNE",
-									winddirDegree: "12",
-									windspeedKmph: "4",
-									windspeedMiles: "2",
-								},
-							],
-							visibility: "10",
-							visibilityMiles: "6",
-						},
-						{
-							bottom: [
-								{
-									tempC: "17",
-									tempF: "62",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "ESE",
-									winddirDegree: "107",
-									windspeedKmph: "1",
-									windspeedMiles: "0",
-								},
-							],
-							cloudcover: "11",
-							freezeLevel: "4049",
-							humidity: "75",
-							mid: [
-								{
-									tempC: "16",
-									tempF: "62",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "ESE",
-									winddirDegree: "109",
-									windspeedKmph: "1",
-									windspeedMiles: "1",
-								},
-							],
-							precipInches: "0.0",
-							precipMM: "0.7",
-							pressure: "1014",
-							pressureInches: "30",
-							snowfall_cm: "0.0",
-							time: "1800",
-							top: [
-								{
-									tempC: "13",
-									tempF: "55",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "SSE",
-									winddirDegree: "163",
-									windspeedKmph: "6",
-									windspeedMiles: "4",
-								},
-							],
-							visibility: "10",
-							visibilityMiles: "6",
-						},
-						{
-							bottom: [
-								{
-									tempC: "10",
-									tempF: "51",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "S",
-									winddirDegree: "187",
-									windspeedKmph: "10",
-									windspeedMiles: "6",
-								},
-							],
-							cloudcover: "12",
-							freezeLevel: "3972",
-							humidity: "80",
-							mid: [
-								{
-									tempC: "15",
-									tempF: "59",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "SW",
-									winddirDegree: "220",
-									windspeedKmph: "9",
-									windspeedMiles: "5",
-								},
-							],
-							precipInches: "0.0",
-							precipMM: "0.5",
-							pressure: "1016",
-							pressureInches: "30",
-							snowfall_cm: "0.0",
-							time: "2100",
-							top: [
-								{
-									tempC: "12",
-									tempF: "54",
-									weatherCode: "113",
-									weatherDesc: [{ value: "Sunny" }],
-									weatherIconUrl: [
-										{
-											value: "http://cdn.worldweatheronline.com/images/wsymbols01_png_64/wsymbol_0001_sunny.png",
-										},
-									],
-									winddir16Point: "SSW",
-									winddirDegree: "205",
-									windspeedKmph: "10",
-									windspeedMiles: "6",
-								},
-							],
-							visibility: "10",
-							visibilityMiles: "6",
+							visibility: "",
+							visibilityMiles: "",
 						},
 					],
 					mid: [
 						{
-							maxtempC: "19",
-							maxtempF: "66",
-							mintempC: "10",
-							mintempF: "49",
+							maxtempC: "",
+							maxtempF: "",
+							mintempC: "",
+							mintempF: "",
 						},
 					],
 					top: [
 						{
-							maxtempC: "14",
-							maxtempF: "57",
-							mintempC: "8",
-							mintempF: "46",
+							maxtempC: "",
+							maxtempF: "",
+							mintempC: "",
+							mintempF: "",
 						},
 					],
-					totalSnowfall_cm: "0.0",
+					totalSnowfall_cm: "",
 				},
 			],
 		},
@@ -626,10 +624,9 @@ function App() {
 				},
 			],
 			weather: tempWeather,
-			lastCheck: 1624875942066,
+			lastCheck: 0,
 		},
 	]);
-	const [allResorts, setAllResorts] = useState([]);
 	const [searchInput, setSearchInput] = useState("");
 	const [searchBox, setSearchBox] = useState(false);
 	const [resortInfo, setResortInfo] = useState(
@@ -641,17 +638,6 @@ function App() {
 	// API KEYS
 
 	const worldWeatherOnlineKey = `9452199cce494ac2a42203118212706`;
-
-	// Retrieve static resort information from ../public/Resorts.json and set them as allResorts state
-
-	useEffect(() => {
-		axios
-			.get("Resorts.json")
-			.then((res) => {
-				setAllResorts(res.data);
-			})
-			.catch((error) => alert("Error retrieving resorts.json"));
-	}, []);
 
 	// Retrieve resort map info and set resortMap as the current image state to be used in the map page
 
@@ -669,7 +655,6 @@ function App() {
 	// Upon change of the current resort in focus, check and update weather information
 
 	useEffect(() => {
-		
 		// Calls the updateLastCheck function then updates the weather information
 		const getWeather = () => {
 			let lat = parseFloat(resortInfo.georeferencing.lat).toFixed(2);
@@ -679,7 +664,11 @@ function App() {
 					`http://api.worldweatheronline.com/premium/v1/ski.ashx?key=${worldWeatherOnlineKey}&q=${lat},${lng}&format=json`
 				)
 				.then((res) => {
-					const updatedResort = { ...resortInfo, weather: res.data, lastCheck: Date.now() };
+					const updatedResort = {
+						...resortInfo,
+						weather: res.data,
+						lastCheck: Date.now(),
+					};
 					setResorts(() => {
 						return resorts.map((resort) =>
 							resort.id === updatedResort.id
@@ -689,50 +678,17 @@ function App() {
 					});
 					setResortInfo(updatedResort);
 				})
-				.catch((error) =>
-					alert(`Unable to update weather for ${resortInfo.name}`)
-				);
+				.catch((error) => () => {
+					alert(
+						`Unable to retrieve weather information for ${resortInfo.name}`
+					);
+				});
 		};
 		// Checks whether the forecast has been updated for this resort within the last hour
 		Date.now() - resortInfo.lastCheck > 3600000
 			? getWeather()
 			: console.log("Weather info updated within the last hour");
-	}, [page]);
-
-	// Checks the resort search input for changes and updates the results list in realtime
-
-	const handleChange = (e) => {
-		setSearchInput(e.target.value);
-	};
-	const filteredResorts = allResorts.filter((resort) =>
-		resort.name.toLowerCase().includes(searchInput.toLowerCase())
-	);
-
-	// Adds a new resort from search after checking for duplication
-
-	const addResort = (resort) => {
-		if (!resorts.find(({ id }) => id === resort.id)) {
-			setResorts([
-				...resorts,
-				{ ...resort, alarms: {}, weather: tempWeather, lastCheck: 0 },
-			]);
-		}
-	};
-
-	// Shows resort details upon selecting a saved resort from resort list
-
-	const showResort = (resort) => {
-		setResortInfo(resort);
-		setPage("ResortInfo");
-	};
-
-	// Removes saved resorts
-
-	const removeResort = (id) => {
-		setResorts((resorts) => {
-			return resorts.filter((resort) => resort.id !== id);
-		});
-	};
+	}, [page, resortInfo]);
 
 	// Opens the map page with the selected resorts map
 
@@ -749,39 +705,13 @@ function App() {
 		setSearchBox(false);
 	};
 
-	// Switches saved alarms on and off without deleting them
+	// Array of forecast conditions to check and to use in the Alarms component
 
-	const toggleAlarm = (resortId, alarmId) => {
-		let alarmMap = (resort) => {
-			let newAlarms = resort.alarms.map((alarm) =>
-				alarm.id !== alarmId
-					? alarm
-					: { ...alarm, toggled: !alarm.toggled }
-			);
-			return { ...resort, alarms: newAlarms };
-		};
-		setResorts((resorts) => {
-			return resorts.map((resort) =>
-				resort.id !== resortId ? resort : alarmMap(resort)
-			);
-		});
-	};
-
-	// Deletes saved alarms
-
-	const removeAlarm = (resortId, alarmId) => {
-		let alarmMap = (resort) => {
-			let newAlarms = resort.alarms.filter(
-				(alarm) => alarm.id !== alarmId
-			);
-			return { ...resort, alarms: newAlarms };
-		};
-		setResorts((resorts) => {
-			return resorts.map((resort) =>
-				resort.id !== resortId ? resort : alarmMap(resort)
-			);
-		});
-	};
+	const forecastConditions = [
+		{ title: "Temperature °C", value: "tempC", unit: "°C" },
+		{ title: "Windspeed Kmph", value: "windspeedKmph", unit: "Kmph" },
+		{ title: "Wind Direction", value: "winddir16Point", unit: "" },
+	];
 
 	// Switch statement to handle page changes in a more readable manner which is then handled by App.js return
 
@@ -791,29 +721,37 @@ function App() {
 				return (
 					<Resorts
 						resorts={resorts}
-						addResort={addResort}
-						handleChange={handleChange}
-						filteredResorts={filteredResorts}
+						setResorts={setResorts}
 						openSearch={searchBox}
 						setOpenSearch={setSearchBox}
 						setSearchInput={setSearchInput}
 						searchInput={searchInput}
-						showResort={showResort}
-						removeResort={removeResort}
+						tempWeather={tempWeather}
+						setResortInfo={setResortInfo}
+						setPage={setPage}
 					/>
 				);
 			case "Alarms":
 				return (
 					<Alarms
 						resorts={resorts}
+						setResorts={setResorts}
+						resort={resortInfo}
+						setResortInfo={setResortInfo}
 						showList={showList}
 						setShowList={setShowList}
-						toggleAlarm={toggleAlarm}
-						removeAlarm={removeAlarm}
+						forecastConditions={forecastConditions}
 					/>
 				);
 			case "Forecast":
-				return <Forecast resort={resortInfo} />;
+				return (
+					<Forecast
+						resort={resortInfo}
+						setResort={setResortInfo}
+						resorts={resorts}
+						forecastConditions={forecastConditions}
+					/>
+				);
 			case "Map":
 				return (
 					<Map

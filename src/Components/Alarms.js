@@ -1,23 +1,62 @@
 import { useState } from "react";
 import Alarm from "./Alarm";
-import NewAlarm from "./Alarm";
+import NewAlarm from "./NewAlarm";
 
 const Alarms = ({
 	resorts,
+	setResorts,
+  resort,
+  setResortInfo,
 	showList,
 	setShowList,
-	toggleAlarm,
-	removeAlarm,
+	forecastConditions,
 }) => {
-	const addAlarm = (resort) => {
-		setNewAlarm(resort);
-		setShowList(false);
+
+  const [newAlarm, setNewAlarm] = useState(false)
+
+	// Switches saved alarms on and off without deleting them
+
+	const toggleAlarm = (resortId, alarmId) => {
+		const alarmMap = (resort) => {
+			let newAlarms = resort.alarms.map((alarm) =>
+				alarm.id !== alarmId
+					? alarm
+					: { ...alarm, toggled: !alarm.toggled }
+			);
+			return { ...resort, alarms: newAlarms };
+		};
+		setResorts((resorts) => {
+			return resorts.map((resort) =>
+				resort.id !== resortId ? resort : alarmMap(resort)
+			);
+		});
 	};
 
-	const [newAlarm, setNewAlarm] = useState("");
+	// Deletes saved alarms
+
+	const removeAlarm = (resortId, alarmId) => {
+		let alarmMap = (resort) => {
+			let newAlarms = resort.alarms.filter(
+				(alarm) => alarm.id !== alarmId
+			);
+			return { ...resort, alarms: newAlarms };
+		};
+		setResorts((resorts) => {
+			return resorts.map((resort) =>
+				resort.id !== resortId ? resort : alarmMap(resort)
+			);
+		});
+	};
+
+	const addAlarm = (resort) => {
+		setResortInfo(resort);
+		setShowList(false);
+    setNewAlarm(true)
+	};
 
 	return (
 		<section className="main alarms">
+			<h1>Alarms</h1>
 			<div className="alarmsList">
 				{resorts.length > 0 ? (
 					resorts.map((resort) =>
@@ -29,6 +68,7 @@ const Alarms = ({
 										alarm={alarm}
 										toggleAlarm={toggleAlarm}
 										removeAlarm={removeAlarm}
+										forecastConditions={forecastConditions}
 									/>
 							  ))
 							: ""
@@ -42,17 +82,17 @@ const Alarms = ({
 
 			<i
 				className={
-					showList & !newAlarm
+					showList
 						? "circleMenuButton remove fas fa-plus"
 						: "circleMenuButton fas fa-plus"
 				}
 				title="Add Alarm"
 				onClick={() => {
-					showList ? setShowList(false) : setShowList(true);
+					showList ? setShowList(false) : setShowList(true)
 				}}
 			></i>
 
-			<div className={showList & !newAlarm ? "slideUp list" : "list"}>
+			<div className={showList ? "slideUp list" : "list"}>
 				{resorts.map((resort) => (
 					<p
 						key={resort.id}
@@ -65,41 +105,13 @@ const Alarms = ({
 				))}
 			</div>
 
-			<div className={newAlarm ? "slideUp newAlarm" : "newAlarm"}>
-				<div className="newAlarmHeader">
-					<h4>New Alarm</h4>
-					<i
-						className="fas fa-times"
-						title="Exit"
-						onClick={() => {
-							setNewAlarm("");
-						}}
-					></i>
-				</div>
-				<h4>{newAlarm.name}</h4>
-				<div className="newAlarmDetails">
-					<form action="">
-						<label htmlFor="units">
-							Units in centimeters:
-							<input type="number" name="cm's" id="" />
-						</label>
-						<label>
-							Choose the condition:
-							<input type="text" list="condition" />
-						</label>
-						<datalist id="condition">
-							<option value="Total snow depth" />
-							<option value="Snowfall over 8 hours" />
-						</datalist>
-					</form>
-					<i className="fas fa-check" title="Save this alarm"></i>
-				</div>
-				<div className="recentWeather">
-					<p>Summary of recent weather</p>
-					<p>current snow depth</p>
-					<p>average snowfall</p>
-				</div>
-			</div>
+			<NewAlarm
+				resort={resort}
+				forecastConditions={forecastConditions}
+        setResorts={setResorts}
+        newAlarm={newAlarm}
+        setNewAlarm={setNewAlarm}
+			/>
 		</section>
 	);
 };

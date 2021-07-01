@@ -16,7 +16,8 @@ const Map = ({
 
 	return (
 		<section className="main map">
-			<h1>{resort.name}</h1>
+			<h1>Maps</h1>
+			<p>{resort.name}</p>
 
 			<i
 				className="circleMenuButton fas fa-images"
@@ -31,14 +32,14 @@ const Map = ({
 					href={resortMap.original.url}
 					target="_blank"
 					title="Click to see large version"
-          rel='noreferrer'
+					rel="noreferrer"
 				>
 					<img
 						src={returnMap(resortMap)}
 						alt={resort.name + " Map"}
 					/>
 				</a>
-				<a className='mapFooter' href={resortMap.original.url}>
+				<a className="mapFooter" href={resortMap.original.url}>
 					Pinch to zoom or click to view high resolution
 				</a>
 			</div>

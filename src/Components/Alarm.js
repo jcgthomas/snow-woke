@@ -9,7 +9,7 @@ const Resort = ({ resort, alarm, showResort, removeResort, toggleAlarm, removeAl
 					console.log("View alarm");
 				}}
 			>
-				<h5>{resort.name}</h5>
+				<h4>{resort.name}</h4>
 				<div className="alarmDetails">
           <h4>Alarm: </h4>
 					<p>{alarm.type} </p>
@@ -26,7 +26,7 @@ const Resort = ({ resort, alarm, showResort, removeResort, toggleAlarm, removeAl
 				<i
 					className={
 						alarm.toggled
-							? "alarmToggle alarmOn fas fa-toggle-on"
+							? "alarmToggle alarmToggleOn fas fa-toggle-on"
 							: "alarmToggle fas fa-toggle-on"
 					}
 					onClick={() => {

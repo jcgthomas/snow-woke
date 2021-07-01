@@ -1,59 +1,50 @@
 import Hourly from "./Hourly";
 import Updated from "./Updated";
+import WindDirection from "./WindDirection";
+import ForecastSelector from "./ForecastSelector";
 
-const Forecast = ({ resort }) => {
+const Forecast = ({ resort, setResort, resorts, forecastConditions }) => {
 	const weather = resort.weather.data.weather[0];
 
-	const setHours = () => {
-		const hourList = [];
-		weather.hourly.forEach((hour) => {
-			let time;
-			hour.time.length === 4
-				? (time = hour.time.slice(0, 2))
-				: (time = hour.time.slice(0, 1));
-			if (time === "0") {
-				time = "12am";
-			} else if (time === "12") {
-				time = "12pm";
-			} else if (time > 12) {
-				time = time % 12;
-				time += "pm";
-			} else if (time < 12) {
-				time += "am";
-			}
-			hourList.push(time);
-		});
-		return hourList;
-	};
+	const hours = ["12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm"];
 
 	return (
 		<section className="forecast main">
-			<h1>Forecast for {resort.name}</h1>
-			<Updated resort={resort} weather={weather} />
+			<h1>Forecast</h1>
+			<ForecastSelector
+				resort={resort}
+				resorts={resorts}
+				setResort={setResort}
+			/>
+			{resort.lastCheck > 0 ? (
+				<Updated resort={resort} weather={weather} hours={hours} />
+			) : (
+				"Retrieving forecast, please wait"
+			)}
 			<h1>24h Chance of snow: {weather.chanceofsnow}%</h1>
 			{weather.chanceofsnow > 0 ? (
 				<h1>Expected snowfall: {weather.totalSnowfall_cm}cm</h1>
 			) : (
 				""
 			)}
-			<Hourly
-				title={"Temperature °C"}
-				weather={weather}
-				setHours={setHours}
-				param={"tempC"}
-			/>
-			<Hourly
-				title={"Windspeed Kmph"}
-				weather={weather}
-				setHours={setHours}
-				param={"windspeedKmph"}
-			/>
-			<Hourly
-				title={"Temperature °F"}
-				weather={weather}
-				setHours={setHours}
-				param={"tempF"}
-			/>
+
+			{forecastConditions.map((condition) => (
+				condition.title == "Wind Direction" ? (
+					<WindDirection
+						title={condition.title}
+						weather={weather}
+						param={condition.value}
+						hours={hours}
+					/>
+				) : (
+					<Hourly
+						title={condition.title}
+						weather={weather}
+						param={condition.value}
+						hours={hours}
+					/>
+				)
+      ))}
 		</section>
 	);
 };

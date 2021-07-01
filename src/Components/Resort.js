@@ -1,4 +1,5 @@
 const Resort = ({ resort, showResort, removeResort }) => {
+
 	return (
 		<div className="resort">
 			<div

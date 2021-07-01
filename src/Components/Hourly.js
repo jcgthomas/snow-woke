@@ -1,13 +1,13 @@
 import Hour from "./Hour";
 
-const Hourly = ({ weather, setHours, title, param }) => {
+const Hourly = ({ weather, title, param, hours }) => {
+
 
   const getParam = (hour) => {
-    return Object.entries(hour).map(([key, value]) => {
-      return (
-        key === param && value
-      )
-    })
+    let output = Object.entries(hour).filter(([key, value]) => 
+      key === param
+    )
+    return output[0][1]
   }
 
 
@@ -17,7 +17,7 @@ const Hourly = ({ weather, setHours, title, param }) => {
 			<div className={title}>
 				<div className="hourly hours">
 					<p>Time</p>
-					{setHours().map((hour) => (
+					{hours.map((hour) => (
 						<Hour key={hour} unit={hour} />
 					))}
 				</div>
