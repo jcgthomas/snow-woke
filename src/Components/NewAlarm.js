@@ -1,6 +1,6 @@
 import NewAlarmCondition from "./NewAlarmCondition";
 import NewAlarmAmount from "./NewAlarmAmount";
-import NewAlarmRecent from "./NewAlarmRecent";
+import Hourly from "./Hourly";
 import { useState } from "react";
 
 const NewAlarm = ({
@@ -37,9 +37,24 @@ const NewAlarm = ({
     setConditions(forecastConditions[0].value)
     setAmount(null)
   }
+  
+  const weather = resort.weather.data.weather[0];
+	const hours = ["12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm"];
+
+  const addRecentConditions = () => {
+		if (
+			conditions === "totalSnowfall_cm" ||
+			conditions === "winddir16Point"
+		) {
+			return;
+		} else if (conditions === "windspeedKmph" || conditions === "tempC") {
+			return <Hourly weather={weather} title={conditions} param={conditions} hours={hours} />;
+		}
+  };
 
 	return (
 		<div className={newAlarm ? "slideUp newAlarm" : "newAlarm"}>
+			{addRecentConditions()}
 			<div className="newAlarmHeader">
 				<h4>New Alarm</h4>
 				<i
@@ -73,7 +88,6 @@ const NewAlarm = ({
 					}}
 				></i>
 			</div>
-      <NewAlarmRecent resort={resort} conditions={conditions} />
 		</div>
 	);
 };

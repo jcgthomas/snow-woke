@@ -13,635 +13,39 @@ import Map from "./Components/Map";
 import ResortInfo from "./Components/ResortInfo";
 
 function App() {
-	// Temporary template weather object
-
-	const tempWeather = {
-		data: {
-			request: [{ query: "", type: "" }],
-			weather: [
-				{
-					astronomy: [null],
-					bottom: [
-						{
-							maxtempC: "",
-							maxtempF: "",
-							mintempC: "",
-							mintempF: "",
-						},
-					],
-					chanceofsnow: "",
-					date: "NOT CHECKED",
-					hourly: [
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "",
-							visibilityMiles: "",
-						},
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "",
-							visibilityMiles: "",
-						},
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "",
-							visibilityMiles: "",
-						},
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "Suny" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "",
-							visibilityMiles: "",
-						},
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "",
-							visibilityMiles: "",
-						},
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "10",
-							visibilityMiles: "6",
-						},
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "",
-							visibilityMiles: "",
-						},
-						{
-							bottom: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							cloudcover: "",
-							freezeLevel: "",
-							humidity: "",
-							mid: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							precipInches: "",
-							precipMM: "",
-							pressure: "",
-							pressureInches: "",
-							snowfall_cm: "",
-							time: "",
-							top: [
-								{
-									tempC: "",
-									tempF: "",
-									weatherCode: "",
-									weatherDesc: [{ value: "" }],
-									weatherIconUrl: [
-										{
-											value: "",
-										},
-									],
-									winddir16Point: "",
-									winddirDegree: "",
-									windspeedKmph: "",
-									windspeedMiles: "",
-								},
-							],
-							visibility: "",
-							visibilityMiles: "",
-						},
-					],
-					mid: [
-						{
-							maxtempC: "",
-							maxtempF: "",
-							mintempC: "",
-							mintempF: "",
-						},
-					],
-					top: [
-						{
-							maxtempC: "",
-							maxtempF: "",
-							mintempC: "",
-							mintempF: "",
-						},
-					],
-					totalSnowfall_cm: "",
-				},
-			],
-		},
-	};
 
 	const [page, setPage] = useState("Resorts");
-	const [resorts, setResorts] = useState([
-		{
-			id: "627",
-			name: "Arlberg (St Anton, St Christoph, Stuben, Lech, ​Zürs, Warth, ​Schröcken)",
-			officialWebsite: "http://www.skiarlberg.at",
-			georeferencing: {
-				lat: "47.20124197224789",
-				lng: "10.16615688800812",
-			},
-			regions: [
-				{
-					id: "344",
-					area: "Tyrol",
-				},
-				{
-					id: "346",
-					area: "Vorarlberg",
-				},
-			],
-			alarms: [],
-			weather: tempWeather,
-			lastCheck: 0,
-		},
-		{
-			id: "987",
-			name: "Matterhorn (Zermatt/​Breuil-Cervinia/​Valtournenche)",
-			officialWebsite: "http://bergbahnen.zermatt.ch/",
-			georeferencing: {
-				lat: "45.942496045578025",
-				lng: "7.709285616874696",
-			},
-			regions: [
-				{
-					id: "86",
-					area: "Italy",
-				},
-				{
-					id: "387",
-					area: "Valais and Vaud",
-				},
-			],
-			alarms: [
-				{
-					id: 1,
-					toggled: true,
-					value: "windspeedKmph",
-					limit: 60,
-				},
-				{
-					id: 2,
-					toggled: false,
-					value: "totalSnowfall_cm",
-					limit: 20,
-				},
-			],
-			weather: tempWeather,
-			lastCheck: 0,
-		},
-	]);
+	const [resorts, setResorts] = useState([]);
 	const [searchInput, setSearchInput] = useState("");
 	const [searchBox, setSearchBox] = useState(false);
-	const [resortInfo, setResortInfo] = useState(
-		resorts.length > 0 ? resorts[0] : ""
-	);
+	const [resortInfo, setResortInfo] = useState("");
 	const [resortMap, setResortMap] = useState("");
 	const [showList, setShowList] = useState(false);
 
-	// API KEYS
+  // Loading localstorage data
+  useEffect(() => {
+    const data1 = localStorage.getItem("resorts");
+    if (data1) {
+      setResorts(JSON.parse(data1));
+    }
+    const data2 = localStorage.getItem("resortInfo");
+    if (data2) {
+      setResortInfo(JSON.parse(data2));
+    }
+  }, [])
 
+  // Setting localstorage data
+  useEffect(() => {
+    localStorage.setItem("resorts", JSON.stringify(resorts));
+    localStorage.setItem("resortInfo", JSON.stringify(resortInfo));
+  })
+
+	// API KEYS
 	const worldWeatherOnlineKey = `9452199cce494ac2a42203118212706`;
 
 	// Retrieve resort map info and set resortMap as the current image state to be used in the map page
-
 	useEffect(() => {
+    resorts.length > 0 &&
 		axios
 			.get(`https://skimap.org/SkiAreas/view/${resortInfo.id}.json`)
 			.then((res) => {
@@ -650,10 +54,9 @@ function App() {
 			.catch((error) =>
 				alert(`Unable to find map for ${resortInfo.name}`)
 			);
-	}, [resortInfo]);
+	}, [resortInfo])
 
 	// Upon change of the current resort in focus, check and update weather information
-
 	useEffect(() => {
 		// Calls the updateLastCheck function then updates the weather information
 		const getWeather = () => {
@@ -691,7 +94,6 @@ function App() {
 	}, [page, resortInfo]);
 
 	// Opens the map page with the selected resorts map
-
 	const viewMap = (resort) => {
 		setResortInfo(resort);
 		setShowList(false);
@@ -699,23 +101,20 @@ function App() {
 	};
 
 	// Closes searches and popups upon page change
-
 	const closePopUps = () => {
 		setShowList(false);
 		setSearchBox(false);
 	};
 
 	// Array of forecast conditions to check and to use in the Alarms component
-
 	const forecastConditions = [
-    { title: "24h Snowfall", value: "totalSnowfall_cm", unit: "cm" },
-		{ title: "Temperature", value: "tempC", unit: "°C" },
-		{ title: "Windspeed", value: "windspeedKmph", unit: "Kmph" },
+		{ title: "24h Snowfall (cm)", value: "totalSnowfall_cm", unit: "cm" },
+		{ title: "Temperature (°C)", value: "tempC", unit: "°C" },
+		{ title: "Windspeed (Kmph)", value: "windspeedKmph", unit: "Kmph" },
 		{ title: "Wind Direction", value: "winddir16Point", unit: "degrees" },
 	];
 
 	// Switch statement to handle page changes in a more readable manner which is then handled by App.js return
-
 	const renderSwitch = (page) => {
 		switch (page) {
 			case "Resorts":
@@ -727,7 +126,6 @@ function App() {
 						setOpenSearch={setSearchBox}
 						setSearchInput={setSearchInput}
 						searchInput={searchInput}
-						tempWeather={tempWeather}
 						setResortInfo={setResortInfo}
 						setPage={setPage}
 					/>
@@ -765,15 +163,16 @@ function App() {
 					/>
 				);
 			case "ResortInfo":
-				return <ResortInfo resort={resortInfo} viewMap={viewMap} />;
+				return <ResortInfo resort={resortInfo} viewMap={viewMap} setPage={setPage} />;
 		}
 	};
 
 	return (
 		<div className="snowWoke">
 			<Header />
-			{renderSwitch(page)}
+				{renderSwitch(page)}
 			<Footer
+				resorts={resorts}
 				changePage={setPage}
 				currentPage={page}
 				closePopUps={closePopUps}

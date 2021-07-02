@@ -2,7 +2,6 @@ import Hour from "./Hour";
 
 const Hourly = ({ weather, title, param, hours }) => {
 
-
   const getParam = (hour) => {
     let output = Object.entries(hour).filter(([key, value]) => 
       key === param

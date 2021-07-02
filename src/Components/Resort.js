@@ -1,4 +1,4 @@
-const Resort = ({ resort, showResort, removeResort }) => {
+const Resort = ({ resort, showResort, removeResort, setPage }) => {
 
 	return (
 		<div className="resort">
@@ -26,6 +26,7 @@ const Resort = ({ resort, showResort, removeResort }) => {
 							? "alarmIcon alarmOn fas fa-bell"
 							: "alarmIcon fas fa-bell"
 					}
+          onClick={() => {setPage('Alarms')}}
 				></i>
 			</div>
 		</div>

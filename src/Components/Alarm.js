@@ -22,8 +22,7 @@ const Resort = ({
 							alarm.value === condition.value
 								? condition.title +
 								  " : " +
-								  alarm.limit +
-								  condition.unit
+								  alarm.limit
 								: ""
 						)}
 					</p>

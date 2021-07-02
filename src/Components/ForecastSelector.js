@@ -18,23 +18,29 @@ const ForecastSelector = ({ resort, resorts, setResort }) => {
 
 	return (
 		<div className="forecastSelector">
-			<div className="selectLeft">
-				<i
-					className="fas fa-arrow-left"
-					onClick={() => {
-						changeResort("prev");
-					}}
-				></i>
-			</div>
+			{resorts.length > 1 && (
+				<div className="selectLeft">
+					<i
+						className="fas fa-arrow-left"
+						onClick={() => {
+							changeResort("prev");
+						}}
+					></i>
+				</div>
+			)}
+
 			<div className="forecastName">{resort.name}</div>
-			<div className="selectRight">
-				<i
-					className="fas fa-arrow-right"
-					onClick={() => {
-						changeResort("next");
-					}}
-				></i>
-			</div>
+      
+			{resorts.length > 1 && (
+				<div className="selectRight">
+					<i
+						className="fas fa-arrow-right"
+						onClick={() => {
+							changeResort("next");
+						}}
+					></i>
+				</div>
+			)}
 		</div>
 	);
 };

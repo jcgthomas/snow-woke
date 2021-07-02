@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom";
 import { useState, useEffect } from "react";
 import axios from "../../node_modules/axios/dist/axios.min.js";
 import Resort from "./Resort";
@@ -10,14 +9,565 @@ const Resorts = ({
 	setOpenSearch,
 	setSearchInput,
 	searchInput,
-	tempWeather,
 	setResortInfo,
 	setPage,
 }) => {
 	const [allResorts, setAllResorts] = useState([]);
 
-	// Retrieve static resort information from ../public/Resorts.json and set them as allResorts state
+	// Temporary template weather object
+	const tempWeather = {
+		data: {
+			request: [{ query: "", type: "" }],
+			weather: [
+				{
+					astronomy: [null],
+					bottom: [
+						{
+							maxtempC: "",
+							maxtempF: "",
+							mintempC: "",
+							mintempF: "",
+						},
+					],
+					chanceofsnow: "",
+					date: "NOT CHECKED",
+					hourly: [
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "Suny" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "10",
+							visibilityMiles: "6",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+						{
+							bottom: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							cloudcover: "",
+							freezeLevel: "",
+							humidity: "",
+							mid: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							precipInches: "",
+							precipMM: "",
+							pressure: "",
+							pressureInches: "",
+							snowfall_cm: "",
+							time: "",
+							top: [
+								{
+									tempC: "",
+									tempF: "",
+									weatherCode: "",
+									weatherDesc: [{ value: "" }],
+									weatherIconUrl: [
+										{
+											value: "",
+										},
+									],
+									winddir16Point: "",
+									winddirDegree: "",
+									windspeedKmph: "",
+									windspeedMiles: "",
+								},
+							],
+							visibility: "",
+							visibilityMiles: "",
+						},
+					],
+					mid: [
+						{
+							maxtempC: "",
+							maxtempF: "",
+							mintempC: "",
+							mintempF: "",
+						},
+					],
+					top: [
+						{
+							maxtempC: "",
+							maxtempF: "",
+							mintempC: "",
+							mintempF: "",
+						},
+					],
+					totalSnowfall_cm: "",
+				},
+			],
+		},
+	};
 
+	// Retrieve static resort information from ../public/Resorts.json and set them as allResorts state
 	useEffect(() => {
 		axios
 			.get("Resorts.json")
@@ -28,48 +578,51 @@ const Resorts = ({
 	}, []);
 
 	// Adds a new resort from search after checking for duplication
-
 	const addResort = (resort) => {
 		if (!resorts.find(({ id }) => id === resort.id)) {
+      const newResort = {
+			...resort,
+			alarms: [],
+			weather: tempWeather,
+			lastCheck: 0,
+		};
 			setResorts([
 				...resorts,
-				{ ...resort, alarms: [], weather: tempWeather, lastCheck: 0 },
+				newResort,
 			]);
+      setResortInfo(newResort);
 		}
 	};
 
 	// Shows resort details upon selecting a saved resort from resort list
-
 	const showResort = (resort) => {
 		setResortInfo(resort);
 		setPage("ResortInfo");
 	};
 
 	// Removes saved resorts
-
 	const removeResort = (id) => {
 		setResorts((resorts) => {
 			return resorts.filter((resort) => resort.id !== id);
 		});
 	};
 
-	// Checks the resort search input for changes and updates the results list in realtime
-
+	// Checks the resort search input for changes and updates the results list
 	const handleChange = (e) => {
 		setSearchInput(e.target.value);
 	};
 	const filteredResorts = allResorts.filter((resort) =>
 		resort.name.toLowerCase().includes(searchInput.toLowerCase())
 	);
-  const selected = (resortId) => {
-    let includes
-    resorts.forEach((resort) => {
-      if (resort.id == resortId) {
-        includes = 'includes'
-      }
-    })
-    return includes
-  }
+	const selected = (resortId) => {
+		let includes;
+		resorts.forEach((resort) => {
+			if (resort.id == resortId) {
+				includes = "includes";
+			}
+		});
+		return includes;
+	};
 
 	return (
 		<section className="main resorts">
@@ -82,6 +635,7 @@ const Resorts = ({
 							resort={resort}
 							showResort={showResort}
 							removeResort={removeResort}
+							setPage={setPage}
 						/>
 					))
 				) : (
