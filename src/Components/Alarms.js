@@ -108,6 +108,7 @@ const Alarms = ({
 			<NewAlarm
 				resort={resort}
 				forecastConditions={forecastConditions}
+        resorts={resorts}
         setResorts={setResorts}
         newAlarm={newAlarm}
         setNewAlarm={setNewAlarm}

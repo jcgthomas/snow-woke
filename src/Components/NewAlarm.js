@@ -1,14 +1,42 @@
 import NewAlarmCondition from "./NewAlarmCondition";
+import NewAlarmAmount from "./NewAlarmAmount";
+import NewAlarmRecent from "./NewAlarmRecent";
 import { useState } from "react";
 
 const NewAlarm = ({
 	newAlarm,
 	setNewAlarm,
 	resort,
+  resorts,
 	setResorts,
 	forecastConditions,
 }) => {
-	const [conditions, setConditions] = useState(forecastConditions[0].title);
+
+	const [conditions, setConditions] = useState(forecastConditions[0].value);
+	const [amount, setAmount] = useState(null);
+
+  const handleSubmit = () => {
+    const pushAlarm = (res) => {
+      const alarm = {
+          id: res.alarms.length + 1, 
+					toggled: true,
+					value: conditions,
+					limit: amount
+        }
+      res.alarms.push(alarm)
+      return res
+    }
+    !amount ? alert('Please fill out all alarm details before submitting') :
+    setResorts(() => {
+      return resorts.map((res) => (
+        res.id !== resort.id ? res :
+        pushAlarm(res)
+      ))
+    })
+    setNewAlarm(false)
+    setConditions(forecastConditions[0].value)
+    setAmount(null)
+  }
 
 	return (
 		<div className={newAlarm ? "slideUp newAlarm" : "newAlarm"}>
@@ -30,22 +58,22 @@ const NewAlarm = ({
 						conditions={conditions}
 						setConditions={setConditions}
 					/>
-					<label htmlFor="units">
-						Units in centimeters:
-						<input type="number" name="cm's" id="" />
-					</label>
-					<datalist id="condition">
-						<option value="Total snow depth" />
-						<option value="Snowfall over 8 hours" />
-					</datalist>
+					<NewAlarmAmount
+						forecastConditions={forecastConditions}
+						conditions={conditions}
+						amount={amount}
+						setAmount={setAmount}
+					/>
 				</form>
-				<i className="fas fa-check" title="Save this alarm"></i>
+				<i
+					className="fas fa-check"
+					title="Save this alarm"
+					onClick={() => {
+						handleSubmit();
+					}}
+				></i>
 			</div>
-			<div className="recentWeather">
-				<p>Summary of recent weather</p>
-				<p>current snow depth</p>
-				<p>average snowfall</p>
-			</div>
+      <NewAlarmRecent resort={resort} conditions={conditions} />
 		</div>
 	);
 };

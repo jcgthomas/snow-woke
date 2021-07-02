@@ -1,8 +1,14 @@
-const Resort = ({ resort, alarm, showResort, removeResort, toggleAlarm, removeAlarm }) => {
-
-
+const Resort = ({
+	resort,
+	alarm,
+	showResort,
+	removeResort,
+	toggleAlarm,
+	removeAlarm,
+	forecastConditions,
+}) => {
 	return (
-		<div className={alarm.toggled ? 'alarm' : 'alarm alarmOff'}>
+		<div className={alarm.toggled ? "alarm" : "alarm alarmOff"}>
 			<div
 				className="alarmTitle"
 				onClick={() => {
@@ -11,17 +17,24 @@ const Resort = ({ resort, alarm, showResort, removeResort, toggleAlarm, removeAl
 			>
 				<h4>{resort.name}</h4>
 				<div className="alarmDetails">
-          <h4>Alarm: </h4>
-					<p>{alarm.type} </p>
-					<p>{alarm.limit}cm</p>
+					<p>
+						{forecastConditions.map((condition) =>
+							alarm.value === condition.value
+								? condition.title +
+								  " : " +
+								  alarm.limit +
+								  condition.unit
+								: ""
+						)}
+					</p>
 				</div>
 			</div>
 			<div className="alarmIcons">
 				<i
 					className="deleteIcon fas fa-trash-alt"
 					onClick={() => {
-            removeAlarm(resort.id, alarm.id)
-          }}
+						removeAlarm(resort.id, alarm.id);
+					}}
 				></i>
 				<i
 					className={
@@ -30,7 +43,7 @@ const Resort = ({ resort, alarm, showResort, removeResort, toggleAlarm, removeAl
 							: "alarmToggle fas fa-toggle-on"
 					}
 					onClick={() => {
-            toggleAlarm(resort.id, alarm.id)
+						toggleAlarm(resort.id, alarm.id);
 					}}
 				></i>
 			</div>

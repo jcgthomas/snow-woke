@@ -33,7 +33,7 @@ const Resorts = ({
 		if (!resorts.find(({ id }) => id === resort.id)) {
 			setResorts([
 				...resorts,
-				{ ...resort, alarms: {}, weather: tempWeather, lastCheck: 0 },
+				{ ...resort, alarms: [], weather: tempWeather, lastCheck: 0 },
 			]);
 		}
 	};

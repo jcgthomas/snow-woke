@@ -28,23 +28,25 @@ const Forecast = ({ resort, setResort, resorts, forecastConditions }) => {
 				""
 			)}
 
-			{forecastConditions.map((condition) => (
-				condition.title == "Wind Direction" ? (
-					<WindDirection
-						title={condition.title}
-						weather={weather}
-						param={condition.value}
-						hours={hours}
-					/>
-				) : (
-					<Hourly
-						title={condition.title}
-						weather={weather}
-						param={condition.value}
-						hours={hours}
-					/>
-				)
-      ))}
+			{forecastConditions
+				.filter((condition) => condition.value !== 'totalSnowfall_cm')
+				.map((condition) =>
+					condition.title == "Wind Direction" ? (
+						<WindDirection
+							title={condition.title}
+							weather={weather}
+							param={condition.value}
+							hours={hours}
+						/>
+					) : (
+						<Hourly
+							title={condition.title}
+							weather={weather}
+							param={condition.value}
+							hours={hours}
+						/>
+					)
+				)}
 		</section>
 	);
 };

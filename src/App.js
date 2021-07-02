@@ -613,14 +613,14 @@ function App() {
 				{
 					id: 1,
 					toggled: true,
-					type: "Depth",
-					limit: 1200,
+					value: "windspeedKmph",
+					limit: 60,
 				},
 				{
 					id: 2,
 					toggled: false,
-					type: "Snowfall",
-					limit: 100,
+					value: "totalSnowfall_cm",
+					limit: 20,
 				},
 			],
 			weather: tempWeather,
@@ -708,9 +708,10 @@ function App() {
 	// Array of forecast conditions to check and to use in the Alarms component
 
 	const forecastConditions = [
-		{ title: "Temperature °C", value: "tempC", unit: "°C" },
-		{ title: "Windspeed Kmph", value: "windspeedKmph", unit: "Kmph" },
-		{ title: "Wind Direction", value: "winddir16Point", unit: "" },
+    { title: "24h Snowfall", value: "totalSnowfall_cm", unit: "cm" },
+		{ title: "Temperature", value: "tempC", unit: "°C" },
+		{ title: "Windspeed", value: "windspeedKmph", unit: "Kmph" },
+		{ title: "Wind Direction", value: "winddir16Point", unit: "degrees" },
 	];
 
 	// Switch statement to handle page changes in a more readable manner which is then handled by App.js return
