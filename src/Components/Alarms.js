@@ -88,8 +88,13 @@ const Alarms = ({
 			<i
 				className={
 					showList
-						? "circleMenuButton remove fas fa-plus"
-						: "circleMenuButton fas fa-plus"
+						? "circleMenuButton remove fas fa-plus "
+						: "circleMenuButton fas fa-plus "
+				}
+				style={
+					newAlarm
+						? { visibility: "hidden", opacity: "0" }
+						: { visibility: "visible", opacity: "1" }
 				}
 				title="Add Alarm"
 				onClick={() => {

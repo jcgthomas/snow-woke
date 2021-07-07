@@ -63,7 +63,7 @@ function App() {
 			let lng = parseFloat(resortInfo.georeferencing.lng).toFixed(2);
 			axios
 				.get(
-					`http://api.worldweatheronline.com/premium/v1/ski.ashx?key=${worldWeatherOnlineKey}&q=${lat},${lng}&format=json`
+					`https://api.worldweatheronline.com/premium/v1/ski.ashx?key=${worldWeatherOnlineKey}&q=${lat},${lng}&format=json`
 				)
 				.then((res) => {
 					const updatedResort = {
