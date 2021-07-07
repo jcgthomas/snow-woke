@@ -56,8 +56,13 @@ const Alarms = ({
 
 	return (
 		<section className="main alarms">
-			<h1>Alarms</h1>
 			<div className="alarmsList">
+				<div
+					className={
+						newAlarm || showList ? "hidePage hidden" : "hidePage"
+					}
+				></div>
+				<h1>Alarms</h1>
 				{resorts.length > 0 ? (
 					resorts.map((resort) =>
 						resort.alarms.length > 0
@@ -88,7 +93,7 @@ const Alarms = ({
 				}
 				title="Add Alarm"
 				onClick={() => {
-					showList ? setShowList(false) : setShowList(true)
+					showList ? setShowList(false) : setShowList(true);
 				}}
 			></i>
 
@@ -108,10 +113,10 @@ const Alarms = ({
 			<NewAlarm
 				resort={resort}
 				forecastConditions={forecastConditions}
-        resorts={resorts}
-        setResorts={setResorts}
-        newAlarm={newAlarm}
-        setNewAlarm={setNewAlarm}
+				resorts={resorts}
+				setResorts={setResorts}
+				newAlarm={newAlarm}
+				setNewAlarm={setNewAlarm}
 			/>
 		</section>
 	);

@@ -15,6 +15,7 @@ const NewAlarm = ({
 	const [conditions, setConditions] = useState(forecastConditions[0].value);
 	const [amount, setAmount] = useState(null);
 
+  // Creates a new alarm using the state above
   const handleSubmit = () => {
     const pushAlarm = (res) => {
       const alarm = {
@@ -38,9 +39,11 @@ const NewAlarm = ({
     setAmount(null)
   }
   
+  // Constants used for alarm variables
   const weather = resort.weather.data.weather[0];
 	const hours = ["12am", "3am", "6am", "9am", "12pm", "3pm", "6pm", "9pm"];
 
+  // Shows recent forecast conditions while choosing a value according to the selected parameter
   const addRecentConditions = () => {
 		if (
 			conditions === "totalSnowfall_cm" ||

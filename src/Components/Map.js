@@ -16,6 +16,11 @@ const Map = ({
 
 	return (
 		<section className="main map">
+			<div
+				className={
+					showList ? "hidePage hidden" : "hidePage"
+				}
+			></div>
 			<h1>Maps</h1>
 			<p>{resort.name}</p>
 

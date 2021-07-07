@@ -626,8 +626,8 @@ const Resorts = ({
 
 	return (
 		<section className="main resorts">
-			<h1>Resorts</h1>
 			<div className="resortList">
+			<h1>Resorts</h1>
 				{resorts.length > 0 ? (
 					resorts.map((resort) => (
 						<Resort
@@ -640,6 +640,7 @@ const Resorts = ({
 					))
 				) : (
 					<p className="noResortsAdded">
+						This app is designed to be used on a mobile device <br></br>
 						Add a resort using the + icon below
 					</p>
 				)}

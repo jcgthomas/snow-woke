@@ -13,7 +13,6 @@ import Map from "./Components/Map";
 import ResortInfo from "./Components/ResortInfo";
 
 function App() {
-
 	const [page, setPage] = useState("Resorts");
 	const [resorts, setResorts] = useState([]);
 	const [searchInput, setSearchInput] = useState("");
@@ -22,39 +21,39 @@ function App() {
 	const [resortMap, setResortMap] = useState("");
 	const [showList, setShowList] = useState(false);
 
-  // Loading localstorage data
-  useEffect(() => {
-    const data1 = localStorage.getItem("resorts");
-    if (data1) {
-      setResorts(JSON.parse(data1));
-    }
-    const data2 = localStorage.getItem("resortInfo");
-    if (data2) {
-      setResortInfo(JSON.parse(data2));
-    }
-  }, [])
+	// Loading localstorage data
+	useEffect(() => {
+		const data1 = localStorage.getItem("resorts");
+		if (data1) {
+			setResorts(JSON.parse(data1));
+		}
+		const data2 = localStorage.getItem("resortInfo");
+		if (data2) {
+			setResortInfo(JSON.parse(data2));
+		}
+	}, []);
 
-  // Setting localstorage data
-  useEffect(() => {
-    localStorage.setItem("resorts", JSON.stringify(resorts));
-    localStorage.setItem("resortInfo", JSON.stringify(resortInfo));
-  })
+	// Setting localstorage data
+	useEffect(() => {
+		localStorage.setItem("resorts", JSON.stringify(resorts));
+		localStorage.setItem("resortInfo", JSON.stringify(resortInfo));
+	});
 
 	// API KEYS
 	const worldWeatherOnlineKey = `9452199cce494ac2a42203118212706`;
 
 	// Retrieve resort map info and set resortMap as the current image state to be used in the map page
 	useEffect(() => {
-    resorts.length > 0 &&
-		axios
-			.get(`https://skimap.org/SkiAreas/view/${resortInfo.id}.json`)
-			.then((res) => {
-				setResortMap(res.data.ski_maps[0].media);
-			})
-			.catch((error) =>
-				alert(`Unable to find map for ${resortInfo.name}`)
-			);
-	}, [resortInfo])
+		resorts.length > 0 &&
+			axios
+				.get(`https://skimap.org/SkiAreas/view/${resortInfo.id}.json`)
+				.then((res) => {
+					setResortMap(res.data.ski_maps[0].media);
+				})
+				.catch((error) =>
+					alert(`Unable to find map for ${resortInfo.name}`)
+				);
+	}, [resortInfo]);
 
 	// Upon change of the current resort in focus, check and update weather information
 	useEffect(() => {
@@ -163,20 +162,28 @@ function App() {
 					/>
 				);
 			case "ResortInfo":
-				return <ResortInfo resort={resortInfo} viewMap={viewMap} setPage={setPage} />;
+				return (
+					<ResortInfo
+						resort={resortInfo}
+						viewMap={viewMap}
+						setPage={setPage}
+					/>
+				);
 		}
 	};
 
 	return (
-		<div className="snowWoke">
-			<Header />
+		<div className="appWrapper">
+			<div className="snowWoke">
+				<Header />
 				{renderSwitch(page)}
-			<Footer
-				resorts={resorts}
-				changePage={setPage}
-				currentPage={page}
-				closePopUps={closePopUps}
-			/>
+				<Footer
+					resorts={resorts}
+					changePage={setPage}
+					currentPage={page}
+					closePopUps={closePopUps}
+				/>
+			</div>
 		</div>
 	);
 }
